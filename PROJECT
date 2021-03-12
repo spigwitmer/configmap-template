@@ -1,0 +1,7 @@
+domain: camtap.io
+repo: github.com/spigwitmer/configmap-template
+resources:
+- group: k8s
+  kind: ConfigMapTemplate
+  version: v1alpha1
+version: "2"

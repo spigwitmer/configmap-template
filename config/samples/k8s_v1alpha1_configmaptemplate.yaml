@@ -1,0 +1,7 @@
+apiVersion: k8s.camtap.io/v1alpha1
+kind: ConfigMapTemplate
+metadata:
+  name: configmaptemplate-sample
+spec:
+  # Add fields here
+  foo: bar
