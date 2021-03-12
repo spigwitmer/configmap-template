@@ -21,7 +21,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	configmaptemplatecontroller "github.com/spigwitmer/configmap-template/pkg/apis/configmaptemplatecontroller"
+	configmaptemplatecontroller "github.com/spigwitmer/configmap-template/pkg/apis/k8s"
 )
 
 // SchemeGroupVersion is group version used to register these objects

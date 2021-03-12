@@ -11,9 +11,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package k8s
+// +k8s:deepcopy-gen=package
+// +groupName=k8s.camtap.io
 
-// GroupName is the group name used in this package
-const (
-	GroupName = "configmaptemplatecontroller.k8s.camtap.io"
-)
+// Package v1alpha1 is the v1alpha1 version of the API.
+package v1alpha1 // import "github.com/spigwitmer/configmap-template/pkg/apis/k8s/v1alpha1"
