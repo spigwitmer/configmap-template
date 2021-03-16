@@ -28,9 +28,9 @@ type ConfigMapTemplateSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	Secrets       []string `json:"secrets"`
-	Template      string   `json:"template"`
-	ConfigMapName string   `json:"configMapName"`
+	Secrets       []string          `json:"secrets"`
+	Data          map[string]string `json:"data"`
+	ConfigMapName string            `json:"configMapName"`
 }
 
 // ConfigMapTemplateStatus defines the observed state of ConfigMapTemplate
