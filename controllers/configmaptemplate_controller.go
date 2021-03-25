@@ -38,10 +38,17 @@ type ConfigMapTemplateReconciler struct {
 // +kubebuilder:rbac:groups=k8s.camtap.io,resources=configmaptemplates/status,verbs=get;update;patch
 
 func (r *ConfigMapTemplateReconciler) Reconcile(req ctrl.Request) (ctrl.Result, error) {
-	_ = context.Background()
-	_ = r.Log.WithValues("configmaptemplate", req.NamespacedName)
+	ctx := context.Background()
+	log := r.Log.WithValues("configmaptemplate", req.NamespacedName)
 
 	// your logic here
+	cmt := k8sv1alpha1.ConfigMapTemplateList{}
+	err := r.List(ctx, &cmt)
+	if err != nil {
+		log.Error(err, "Error listing ConfigMapTemplates")
+		return ctrl.Result{}, err
+	}
+	log.V(1).Info("ConfigMapTemplate count", "key", "configmaptemplate-count", "count", len(cmt.Items))
 
 	return ctrl.Result{}, nil
 }
